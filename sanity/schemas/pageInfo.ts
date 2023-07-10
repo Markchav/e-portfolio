@@ -6,8 +6,21 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'name',
+      name: 'heroTitle1',
       title: 'Name',
+      description:'First part of text("Hi my Name is ...")',
+      type: 'string',
+    }),
+    defineField({
+      name: 'heroTitle2',
+      title: 'Name a hobby',
+      description:'Second part of text',
+      type: 'string',
+    }),
+    defineField({
+      name: 'heroTitle3',
+      title: 'Name something you enjoy MORE',
+      description:'Third part of text("But loves to")',
       type: 'string',
     }),
     defineField({
@@ -47,6 +60,12 @@ export default defineType({
       }
     }),
     defineField({
+      name: 'intriguingContactBodyHeader',
+      title: 'Intriguing Contact Body Header',
+      description:'Say Something that will catch your attention',
+      type: 'string',
+    }),
+    defineField({
       name: 'phoneNumber',
       title: 'Phone Number',
       type: 'string',
@@ -71,50 +90,3 @@ export default defineType({
     
   ],
 })
-
-// defineField({
-    //   name: 'slug',
-    //   title: 'Slug',
-    //   type: 'slug',
-    //   options: {
-    //     source: 'title',
-    //     maxLength: 96,
-    //   },
-    // }),
-    // defineField({
-    //   name: 'author',
-    //   title: 'Author',
-    //   type: 'reference',
-    //   to: {type: 'author'},
-    // }),
-    // defineField({
-    //   name: 'mainImage',
-    //   title: 'Main image',
-    //   type: 'image',
-    //   options: {
-    //     hotspot: true,
-    //   },
-    //   fields: [
-    //     {
-    //       name: 'alt',
-    //       type: 'string',
-    //       title: 'Alternative Text',
-    //     }
-    //   ]
-    // }),
-    // defineField({
-    //   name: 'categories',
-    //   title: 'Categories',
-    //   type: 'array',
-    //   of: [{type: 'reference', to: {type: 'category'}}],
-    // }),
-    // defineField({
-    //   name: 'publishedAt',
-    //   title: 'Published at',
-    //   type: 'datetime',
-    // }),
-    // defineField({
-    //   name: 'body',
-    //   title: 'Body',
-    //   type: 'blockContent',
-    // }),

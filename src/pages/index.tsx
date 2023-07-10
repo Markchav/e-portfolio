@@ -14,13 +14,12 @@ import Footer from '@/components/Footer'
 import Contact from '@/components/Contact'
 import { GetServerSideProps, GetStaticProps } from 'next'
 import { Experience, PageInfo, Project, Skill, Social } from '../../typings'
-import pageInfo from '../../sanity/schemas/pageInfo'
 import { fetchPageInfo } from '../../utils/fetchPageInfo'
 import { fetchExperience } from '../../utils/fetchExperience'
 import { fetchSkills } from '../../utils/fetchSkills'
 import { fetchProjects } from '../../utils/fetchProjects'
 import { fetchSocials } from '../../utils/fetchSocials'
-import { type } from 'os'
+
 
 type Props = {
   pageInfo:PageInfo;
@@ -43,7 +42,7 @@ export default function Home({pageInfo, experiences,skills,projects,socials}:Pro
 
 
     {/* Header */}
-<Navbar/>
+<Navbar pageInfo={pageInfo} socials={socials}/>
 <div className='w-full h-[88vh] xl:flex items-center gap-20 justify-between'>
 
   {/* LeftSide */}
@@ -60,13 +59,10 @@ className='hidden xl:inline-flex w-32 h-full fixed left-0 bottom-0'>
 <Hero pageInfo={pageInfo}/>
 <About pageInfo={pageInfo}/>
 <WorkExperience experiences={experiences}/>
-<Projects />
-<Contact/>
+<Projects projects={projects}/>
+<Contact pageInfo={pageInfo}/>
 <Footer/>
 
-    {/* Projects */}
-
-    {/* Contact */}
 
 </div>
 
@@ -76,13 +72,11 @@ initial={{opacity:0}}
 animate={{opacity:1}}
 transition={{delay:1.5}} 
 className='hidden xl:inline-flex w-32 h-full fixed right-0 bottom-0'>
-  <RightSide/>
+  <RightSide pageInfo={pageInfo}/>
 </motion.div>
 
 </div>
-    {/* Hero */}
 
-   
     </main>
     </>
 

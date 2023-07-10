@@ -1,13 +1,16 @@
 import React from 'react'
-type Props = {}
+import { PageInfo } from '../../typings'
+type Props = {
+  pageInfo:PageInfo
+}
 
-export default function RightSide({}: Props) {
+export default function RightSide({pageInfo}: Props) {
   return (
     <div className='w-full h-full flex flex-col items-center justify-end gap-6 text-textLight'>
         <div className='flex flex-col gap-7'>
-        <a className='mb-7' href='mailto:markchavez165@gmail.com'>
+        <a className='mb-7' href={`mailto:${pageInfo?.email}`}>
             <p className='text-sm rotate-90 w-72 tracking-wide text-white'>
-                markchavez165@gmail.com
+              {pageInfo?.email}
             </p>
         </a>
         </div>

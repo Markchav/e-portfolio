@@ -3,6 +3,7 @@ import React from 'react'
 import SectionTitle from './SectionTitle'
 import {PhoneIcon, MapIcon, EnvelopeIcon} from '@heroicons/react/24/solid'
 import { useForm, SubmitHandler } from "react-hook-form";
+import { PageInfo } from '../../typings';
 
 type Inputs = {
   fullName: string,
@@ -11,9 +12,13 @@ type Inputs = {
   message:string
 };
 
+type Props = {
+  pageInfo:PageInfo
+  }
 
 
-export default function Contact() {
+
+export default function Contact({pageInfo}: Props) {
   const { register, handleSubmit,formState:{errors} } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
     window.location.href = `mailto:markchavez165@gmail?subject=${formData.subject}&body=Hi,my name is ${formData.fullName}.${formData.message}`
@@ -25,18 +30,19 @@ export default function Contact() {
     <SectionTitle title='Contact'/>
 <div className='flex flex-col space-y-10 md:mt-32'>
   <h4 className='text-2xl md:text-4xl font-semibold text-center'>
-    Don't be shy! Hit me up!👇🏻
+    {/* Don't be shy! Hit me up!👇🏻 */}
+    {pageInfo?.intriguingContactBodyHeader}
   </h4>
 
     <div className='space-y-10'>
         <div className='flex items-center space-x-5 justify-center'>
           <PhoneIcon className='text-[#F7AB0A] h-7 w-7 animate-pulse'/>
-          <a href="tel:954-668-5519" className='text-lg md:text-xl'>954-668-5519</a>
+          <a href={`tel:${pageInfo?.phoneNumber}`} className='text-lg md:text-xl'>{pageInfo?.phoneNumber}</a>
         </div>
 
         <div className='flex items-center space-x-5 justify-center'>
           <EnvelopeIcon className='text-[#F7AB0A] h-7 w-7 animate-pulse'/>
-          <a href='mailto:markchavez165@gmail.com' className='text-lg md:text-xl'>markchavez165@gmail.com</a>
+          <a href={`mailto:${pageInfo?.email}`} className='text-lg md:text-xl'>{pageInfo?.email}</a>
         </div>
         
         {/* <div className='flex items-center space-x-5 justify-center'>

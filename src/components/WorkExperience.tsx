@@ -57,12 +57,12 @@ export default function WorkExperience({experiences}: Props) {
                 <div className='w-full mt-10 flex flex-col md:flex-row text-gray-400 font-medium md:gap-16 gap-10'>
                     
                     <ul className=' md:w-32 flex flex-col '>
-                        {/* {experiences?.map((experience)=> (
-                          <li key={experience._id} onClick={handleNexsys} className={`${workNexsys ? 
-                            "border-l-white text-white" : 
-                            " text-gray-400 border-l-hoverColor"} 
-                            border-l-2 bg-transparent hover:bg-white/10 py-3 text-md md:text-lg cursor-pointer duration-300 px-4 font-medium`}>{experience?.company}</li>
-                        ))} */}
+                  {/* {experiences?.map((experience)=> (
+                    <li key={experience._id} onClick={handleNexsys} className={`${workNexsys ? 
+                      "border-l-white text-white" : 
+                      " text-gray-400 border-l-hoverColor"} 
+                      border-l-2 bg-transparent hover:bg-white/10 py-3 text-md md:text-lg cursor-pointer duration-300 px-4 font-medium`}>{experience?.company}</li>
+                  ))} */}
 
                         <li onClick={handleNexsys} className={`${workNexsys ? 
                           "border-l-white text-white" : 

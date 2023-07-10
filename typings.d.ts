@@ -21,8 +21,11 @@ export interface PageInfo extends SanityBody {
     email:string;
     role:string;
     heroImage: Image;
-    name:string;
+    heroTitle1:string;
+    heroTitle2:string;
+    heroTitle3:string;
     phoneNumber:string;
+    intriguingContactBodyHeader:string;
     profilePic:Image;
     technologies:Technology[];
 }
@@ -30,13 +33,15 @@ export interface PageInfo extends SanityBody {
 
 export interface Skill extends SanityBody {
     _type:"skill";
-    _title:string;
-
+    title:string;
+    image:Image;
 }
 
 export interface Technology extends SanityBody {
     _type:"skill";
-    _title:string;
+    title:string;
+    image:Image;
+
 
 }
 
@@ -48,6 +53,7 @@ export interface Experience extends SanityBody {
     isCurrentlyWorkingHere:boolean;
     jobTitle:string;
     points:string[];
+    technologies:Technology[];
 }
 
 export interface Project extends SanityBody {
@@ -57,6 +63,7 @@ export interface Project extends SanityBody {
     linkToBuild:string;
     summary:string;
     technologies:Technology[];
+    linkToGithub:string
 }
 
 

@@ -5,67 +5,69 @@ import img2 from '/public/assets/images/example.avif'
 import { motion } from 'framer-motion'
 import {TbBrandGithub, } from 'react-icons/tb'
 import {RxOpenInNewWindow} from 'react-icons/rx'
+import { Project } from '../../typings'
+import { urlForImage } from '../../sanity/lib/image'
 
 type Props = {
-
+projects:Project[]
 }
 
-export default function Projects({}: Props) {
+export default function Projects({projects}: Props) {
 
 
-    const projects = [
-        {
-            "idx":1,
-            "src":"/public/assets/images/example.avif",
-            "href":"https://picnicsoflo.com",
-            "alt":"instaclone",
-            "title":"Instaclone",
-            "description":"A full functional Cyber Security Blog where you can view the latest post and comments on it by passing your ideas besides you can try to add your own post on it by logging on the portal.Something I want to say  we will add the tech used inside",
-            "hrefGitHub":"https://github.com/Markchav?tab=repositories",
-            "hrefLink":"https://picnicsoflo.com"
-        },
-        {
-            "idx":2,
-            "src":"/public/assets/images/example.avif",
-            "href":"https://picnicsoflo.com",
-            "alt":"E-commerce website",
-            "title":"E-commerce website",
-            "description":"A full functional Cyber Security Blog where you can view the latest post and comments on it by passing your ideas besides you can try to add your own post on it by logging on the portal.Something I want to say  we will add the tech used inside",
-            "hrefGitHub":"https://github.com/Markchav/mark-clothing",
-            "hrefLink":"https://picnicsoflo.com"
-        },
-        {
-            "idx":3,
-            "src":"/public/assets/images/example.avif",
-            "href":"https://https://los-magueyes.vercel.app/",
-            "alt":"Los Magueyes",
-            "title":"Los Magueyes",
-            "description":"A full functional Cyber Security Blog where you can view the latest post and comments on it by passing your ideas besides you can try to add your own post on it by logging on the portal.Something I want to say  we will add the tech used inside",
-            "hrefGitHub":"https://github.com/rayovims/los-magueyes",
-            "hrefLink":"https://https://los-magueyes.vercel.app/"
-        },
-        {
-            "idx":4,
-            "src":"/public/assets/images/example.avif",
-            "href":"https://picnicsoflo.com",
-            "alt":"instaclone",
-            "title":"Picnic SoFlo",
-            "description":"A full functional Cyber Security Blog where you can view the latest post and comments on it by passing your ideas besides you can try to add your own post on it by logging on the portal.Something I want to say  we will add the tech used inside",
-            "hrefGitHub":"https://github.com/Markchav/picnicSoFlo",
-            "hrefLink":"https://picnicsoflo.com"
-        },
-        // {
-        //     "idx":5,
-        //     "src":"/public/assets/images/example.avif",
-        //     "href":"https://picnicsoflo.com",
-        //     "alt":"instaclone",
-        //     "title":"Instaclone",
-        //     "description":"A full functional Cyber Security Blog where you can view the latest post and comments on it by passing your ideas besides you can try to add your own post on it by logging on the portal.Something I want to say  we will add the tech used inside",
-        //     "hrefGitHub":"https://github.com/Markchav?tab=repositories",
-        //     "hrefLink":"https://picnicsoflo.com"
-        // },
+    // const projects = [
+    //     {
+    //         "idx":1,
+    //         "src":"/public/assets/images/example.avif",
+    //         "href":"https://picnicsoflo.com",
+    //         "alt":"instaclone",
+    //         "title":"Instaclone",
+    //         "description":"A full functional Cyber Security Blog where you can view the latest post and comments on it by passing your ideas besides you can try to add your own post on it by logging on the portal.Something I want to say  we will add the tech used inside",
+    //         "hrefGitHub":"https://github.com/Markchav?tab=repositories",
+    //         "hrefLink":"https://picnicsoflo.com"
+    //     },
+    //     {
+    //         "idx":2,
+    //         "src":"/public/assets/images/example.avif",
+    //         "href":"https://picnicsoflo.com",
+    //         "alt":"E-commerce website",
+    //         "title":"E-commerce website",
+    //         "description":"A full functional Cyber Security Blog where you can view the latest post and comments on it by passing your ideas besides you can try to add your own post on it by logging on the portal.Something I want to say  we will add the tech used inside",
+    //         "hrefGitHub":"https://github.com/Markchav/mark-clothing",
+    //         "hrefLink":"https://picnicsoflo.com"
+    //     },
+    //     {
+    //         "idx":3,
+    //         "src":"/public/assets/images/example.avif",
+    //         "href":"https://https://los-magueyes.vercel.app/",
+    //         "alt":"Los Magueyes",
+    //         "title":"Los Magueyes",
+    //         "description":"A full functional Cyber Security Blog where you can view the latest post and comments on it by passing your ideas besides you can try to add your own post on it by logging on the portal.Something I want to say  we will add the tech used inside",
+    //         "hrefGitHub":"https://github.com/rayovims/los-magueyes",
+    //         "hrefLink":"https://https://los-magueyes.vercel.app/"
+    //     },
+    //     {
+    //         "idx":4,
+    //         "src":"/public/assets/images/example.avif",
+    //         "href":"https://picnicsoflo.com",
+    //         "alt":"instaclone",
+    //         "title":"Picnic SoFlo",
+    //         "description":"A full functional Cyber Security Blog where you can view the latest post and comments on it by passing your ideas besides you can try to add your own post on it by logging on the portal.Something I want to say  we will add the tech used inside",
+    //         "hrefGitHub":"https://github.com/Markchav/picnicSoFlo",
+    //         "hrefLink":"https://picnicsoflo.com"
+    //     },
+    //     {
+    //         "idx":5,
+    //         "src":"/public/assets/images/example.avif",
+    //         "href":"https://picnicsoflo.com",
+    //         "alt":"instaclone",
+    //         "title":"Instaclone",
+    //         "description":"A full functional Cyber Security Blog where you can view the latest post and comments on it by passing your ideas besides you can try to add your own post on it by logging on the portal.Something I want to say  we will add the tech used inside",
+    //         "hrefGitHub":"https://github.com/Markchav?tab=repositories",
+    //         "hrefLink":"https://picnicsoflo.com"
+    //     },
 
-    ]
+    // ]
 return (
 <section id='projects' className='snap-start'>
         <motion.div 
@@ -76,12 +78,12 @@ return (
 
             <SectionTitle title='Projects'/>
 
-            <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20  md:mb-5 scrollbar  scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
+            <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 md:mb-5 md:mt-0 mt-10 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
             {/* mb-28 sm:mb-14 */}
-                {projects.map((project,i)=> (
+                {projects?.map((project,i)=> (
                     <div key={i} className='w-screen flex-shrink-0 h-screen snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44'>
                         <div className='md:mt-20 snap-center'>
-                            <a href={project.href} target='_blank' >
+                            <a href={project?.linkToBuild} target='_blank' >
                                 <motion.div
                                 initial={{ y:-300, opacity:0}}
                                 whileInView={{ opacity:1, y:0}}
@@ -89,7 +91,7 @@ return (
                                 viewport={{once:true}}
                                 className='snap-center'
                                 >
-                                <Image alt='' src={img2} width={500} height={200} />
+                                <Image alt='' src={urlForImage(project?.image).url()} width={500} height={200} className='w-[450px] h-[400px]' />
                                 </motion.div>
                             </a>
                         </div>
@@ -102,20 +104,18 @@ return (
                             {project.title}
                         </h4>
 
-                        <p className='md:text-lg text-base text-center md:text-left w-72 justify-center mx-auto md:w-[1200px] text-white'>{project.description}</p>
+                        <p className='md:text-lg text-base text-center md:text-left w-72 justify-center mx-auto md:w-[1200px] text-white'>{project?.summary}</p>
                         
                     </div>
 
                     <ul className='text-sm md:text-base tracking-wide flex gap-2 md:gap-5 justify-between text-white'>
-                            <li>JavaScript</li>
-                            <li>Firebase</li>
-                            <li>React js</li>
-                            <li>Tailwind Css</li>
-                            <li>Nextjs</li>
+                        {project?.technologies.map(technology => (
+                            <li key={technology?._id}>{technology?.title}</li>
+                        ))}
                         </ul>
                     <div className='text-base md:text-2xl tracking-wide flex gap-5 md:gap-5 justify-between text-white'>
-                            <a className='hover:text-gray-400 duration-300' href={project.hrefGitHub} target='_blank'><TbBrandGithub /></a>
-                            <a className='hover:text-gray-400 duration-300' href={project.hrefLink} target='_blank'><RxOpenInNewWindow/></a>
+                            <a className='hover:text-gray-400 duration-300' href={project?.linkToGithub} target='_blank'><TbBrandGithub className='md:h-8 md:w-8 h-8 w-8' /></a>
+                            <a className='hover:text-gray-400 duration-300' href={project?.linkToBuild} target='_blank'><RxOpenInNewWindow className='md:h-8 md:w-8 h-8 w-8'/></a>
 
                             
                         </div>

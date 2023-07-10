@@ -5,11 +5,15 @@ import { SocialIcon } from 'react-social-icons'
 import { logo } from '../../public/assets';
 import Link from 'next/link';
 import { easeIn, motion } from "framer-motion"
+import { PageInfo, Social } from '../../typings';
 
 
-type Props = {}
+type Props = {
+  pageInfo:PageInfo
+  socials:Social[]
+}
 
-export default function Navbar({}: Props) {
+export default function Navbar({pageInfo,socials}: Props) {
   const [showMenu, setShowMenu] = useState(false)
   const ref = useRef<string | any>('')
 
@@ -199,30 +203,47 @@ export default function Navbar({}: Props) {
               
               {/* Icons */}
               <div className='flex gap-4'>
-              <motion.span 
+              {/* <motion.span 
               initial={{y: 20, opacity:0}}
               animate={{y:0, opacity:1}}
               transition={{ delay:0.8, ease:easeIn}}
-              className='w-10 h-10 text-xl bg-bodyColorColor border-[1px] border-zinc-700 hover:border-textGreen text-zinc-200 rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300'><SocialIcon url="https://instagram.com/markchavez_" fgColor='gray' bgColor='transparent' target='_blank'/></motion.span>
-              <motion.span
+              className='w-10 h-10 text-xl bg-bodyColorColor border-[1px] border-zinc-700 hover:border-textGreen text-zinc-200 rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300'>
+                <SocialIcon url="https://instagram.com/markchavez_" fgColor='gray' bgColor='transparent' target='_blank'/> */}
+                {socials.map((social)=>
+          <motion.span 
+              initial={{y: 20, opacity:0}}
+              animate={{y:0, opacity:1}}
+              transition={{ delay:0.8, ease:easeIn}} key={social._id} className='w-10 h-10 text-xl bg-bodyColorColor border-[1px] border-zinc-700 hover:border-textGreen text-zinc-200 rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300'>
+          <SocialIcon 
+          url={social.url} 
+          fgColor='gray' 
+          bgColor='transparent' 
+          target='_blank'/>
+          </motion.span>
+          )}
+                {/* </motion.span> */}
+              {/* <motion.span
               initial={{y: 20, opacity:0}}
               animate={{y:0, opacity:1}}
               transition={{ delay:0.9, ease:easeIn}} 
-              className='w-10 h-10 text-xl bg-bodyColorColor border-[1px] border-zinc-700 hover:border-textGreen text-zinc-200 rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300'><SocialIcon url="https://github.com/Markchav?tab=repositories" fgColor='gray' bgColor='transparent' target='_blank'/></motion.span>
+              className='w-10 h-10 text-xl bg-bodyColorColor border-[1px] border-zinc-700 hover:border-textGreen text-zinc-200 rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300'><SocialIcon url="https://github.com/Markchav?tab=repositories" fgColor='gray' bgColor='transparent' target='_blank'/>
+              </motion.span>
+
               <motion.span
               initial={{y: 20, opacity:0}}
               animate={{y:0, opacity:1}}
               transition={{ delay:1, ease:easeIn}}
-              className='w-10 h-10 text-xl bg-bodyColorColor border-[1px] border-zinc-700 hover:border-textGreen text-zinc-200 rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300'><SocialIcon url="https://www.linkedin.com/in/mark-chavez-22a701198/" fgColor='gray' bgColor='transparent' target='_blank'/></motion.span>
+              className='w-10 h-10 text-xl bg-bodyColorColor border-[1px] border-zinc-700 hover:border-textGreen text-zinc-200 rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300'><SocialIcon url="https://www.linkedin.com/in/mark-chavez-22a701198/" fgColor='gray' bgColor='transparent' target='_blank'/>
+              </motion.span> */}
 
               </div>
               <motion.a 
               initial={{opacity:0}}
               animate={{opacity:1}}
               transition={{delay:1.2, ease:'easeIn'}}
-              className='text-sm w-72 tracking-widest text-white text-center' href='mailto:markchavez165@gmail.com'>
+              className='text-sm w-72 tracking-widest text-white text-center' href={`mailto:${pageInfo?.email}`}>
             <p className=''>
-                markchavez165@gmail.com
+                {pageInfo?.email}
             </p>
         </motion.a>
                 </div>

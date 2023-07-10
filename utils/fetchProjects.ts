@@ -7,7 +7,7 @@ export const fetchProjects =async () => {
 
     const projects:Project[] = data.projects;
 
-    // console.log("fetching", skills)
+    // console.log("fetching", projects)
 
     return projects;
 }
