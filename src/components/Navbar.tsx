@@ -6,6 +6,7 @@ import { logo } from '../../public/assets';
 import Link from 'next/link';
 import { easeIn, motion } from "framer-motion"
 import { PageInfo, Social } from '../../typings';
+// import img from '../../public/assets/images/resume_snapshot.png'
 
 
 type Props = {
@@ -27,14 +28,6 @@ export default function Navbar({pageInfo,socials}: Props) {
     element?.scrollIntoView({
       behavior:'smooth',
     });
-
-    // update the class name of the clicked link
-
-    // const links = document.querySelectorAll('.nav-link')
-    // links.forEach((link) => {
-    //   link.classList.remove('active')
-    // });
-    // e.currentTarget.classList.add('active')
   };
 
   const handleClick = (e:any)=> {
@@ -108,7 +101,7 @@ export default function Navbar({pageInfo,socials}: Props) {
                 </Link>
             </ul>
 
-              <a href='/public/assets/mark_resume.pdf' target='_blank'>
+              <a href="/assets/Resume_SWE.pdf" target='_blank'>
               <motion.button
             initial={{opacity:0}}
             animate={{opacity:1}}
@@ -190,7 +183,7 @@ export default function Navbar({pageInfo,socials}: Props) {
                 </Link>
             </ul>
 
-            <a href='/public/assets/mark_resume.pdf' target='_blank'>
+            <a href="/assets/Resume_SWE.pdf" target='_blank'>
               <motion.button
             initial={{opacity:0}}
             animate={{opacity:1}}
@@ -203,12 +196,6 @@ export default function Navbar({pageInfo,socials}: Props) {
               
               {/* Icons */}
               <div className='flex gap-4'>
-              {/* <motion.span 
-              initial={{y: 20, opacity:0}}
-              animate={{y:0, opacity:1}}
-              transition={{ delay:0.8, ease:easeIn}}
-              className='w-10 h-10 text-xl bg-bodyColorColor border-[1px] border-zinc-700 hover:border-textGreen text-zinc-200 rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300'>
-                <SocialIcon url="https://instagram.com/markchavez_" fgColor='gray' bgColor='transparent' target='_blank'/> */}
                 {socials.map((social)=>
           <motion.span 
               initial={{y: 20, opacity:0}}
@@ -221,21 +208,6 @@ export default function Navbar({pageInfo,socials}: Props) {
           target='_blank'/>
           </motion.span>
           )}
-                {/* </motion.span> */}
-              {/* <motion.span
-              initial={{y: 20, opacity:0}}
-              animate={{y:0, opacity:1}}
-              transition={{ delay:0.9, ease:easeIn}} 
-              className='w-10 h-10 text-xl bg-bodyColorColor border-[1px] border-zinc-700 hover:border-textGreen text-zinc-200 rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300'><SocialIcon url="https://github.com/Markchav?tab=repositories" fgColor='gray' bgColor='transparent' target='_blank'/>
-              </motion.span>
-
-              <motion.span
-              initial={{y: 20, opacity:0}}
-              animate={{y:0, opacity:1}}
-              transition={{ delay:1, ease:easeIn}}
-              className='w-10 h-10 text-xl bg-bodyColorColor border-[1px] border-zinc-700 hover:border-textGreen text-zinc-200 rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300'><SocialIcon url="https://www.linkedin.com/in/mark-chavez-22a701198/" fgColor='gray' bgColor='transparent' target='_blank'/>
-              </motion.span> */}
-
               </div>
               <motion.a 
               initial={{opacity:0}}

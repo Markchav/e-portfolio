@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, {useState} from 'react'
 import SectionTitle from './SectionTitle'
-import Nexsys from './works/Nexsys'
+import ExperienceCard from './ExperienceCard'
 import { Experience } from '../../typings'
 
 type Props = {
@@ -10,10 +10,10 @@ type Props = {
 
 export default function WorkExperience({experiences}: Props) {
 
-  const [activework, setActiveWork] = useState<number>(0)
+  const [activeWork, setActiveWork] = useState<number>(0)
   //here you can handle your active experience
   const handleNexsys = (id:number)=> {
-    console.log("🚀 ~ file: WorkExperience.tsx:16 ~ handleNexsys ~ id:", id)
+    // console.log("🚀 ~ file: WorkExperience.tsx:16 ~ handleNexsys ~ id:", id)
     setActiveWork(id)
   }
 
@@ -29,7 +29,7 @@ export default function WorkExperience({experiences}: Props) {
                     
                     <ul className=' md:w-32 flex flex-col '>
                         {experiences?.map((experience,idx)=> (
-                          <li key={experience._id} onClick={()=>handleNexsys(idx)} className={`${activework === idx ? 
+                          <li key={experience._id} onClick={()=>handleNexsys(idx)} className={`${activeWork === idx ? 
                             "border-l-white text-white" : 
                             " text-gray-400 border-l-hoverColor"} 
                             border-l-2 bg-transparent hover:bg-white/10 py-3 text-md md:text-lg cursor-pointer duration-300 px-4 font-medium`}>{experience?.company}</li>
@@ -37,7 +37,7 @@ export default function WorkExperience({experiences}: Props) {
                     </ul>
 
                     {experiences?.map((experience,idx)=> (
-                      activework === idx && <Nexsys key={idx} experience={experience}/>
+                      activeWork === idx && <ExperienceCard key={idx} experience={experience}/>
                     ))}
                   
                 </div>

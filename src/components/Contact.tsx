@@ -21,7 +21,7 @@ type Props = {
 export default function Contact({pageInfo}: Props) {
   const { register, handleSubmit,formState:{errors} } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
-    window.location.href = `mailto:markchavez165@gmail?subject=${formData.subject}&body=Hi,my name is ${formData.fullName}.${formData.message}`
+    window.location.href = `mailto:markchavez165@gmail?subject=${formData.subject}&body=Hi, my name is ${formData.fullName}. ${formData.message}`
   };
 
   return (
@@ -44,11 +44,6 @@ export default function Contact({pageInfo}: Props) {
           <EnvelopeIcon className='text-[#F7AB0A] h-7 w-7 animate-pulse'/>
           <a href={`mailto:${pageInfo?.email}`} className='text-lg md:text-xl'>{pageInfo?.email}</a>
         </div>
-        
-        {/* <div className='flex items-center space-x-5 justify-center'>
-          <MapIcon className='text-[#F7AB0A] h-7 w-7 animate-pulse'/>
-          <p className='text-2xl'>9431 NW 19th Street</p>
-        </div> */}
     </div>
 
     <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col space-y-2 w-fit mx-auto'>

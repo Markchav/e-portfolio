@@ -10,7 +10,6 @@ import { urlForImage } from '../../sanity/lib/image'
 
 type Props = {
     pageInfo:PageInfo,
-
 }
 
 export default function About({pageInfo}: Props) {
@@ -23,7 +22,7 @@ export default function About({pageInfo}: Props) {
 
             <div className='flex flex-col lgl:flex-row gap-16 xs:mt-[450px] lg:-mt-0'>
 
-                <div className='w-full lgl:w-2/3 text-white font-medium flex flex-col gap-4'>
+                <div className='w-full lgl:w-2/3 text-white font-medium flex flex-col gap-3 '>
                     
                     {/* <h4 className='text-2xl'>Here is a little background</h4> */}
                     <p className='md:text-lg text-base'>{pageInfo?.backgroundInformationFirstParagraph}</p>
@@ -31,45 +30,12 @@ export default function About({pageInfo}: Props) {
                     <p className='md:text-lg text-base'>{pageInfo?.backgroundInformationThirdParagraph}</p>
                     <p className='md:text-lg text-base'>Here are a few technologies I have been working with recently:</p>
 
-                    <ul className='max-w-[450px] text-sm grid grid-cols-2 gap-2 mt-6 place-items-center md:place-items-start'>
-                        {/* {pageInfo.technologies.map((skill: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | React.PromiseLikeOfReactNode | null | undefined,i: { "": React.Key | null | undefined })=> 
-                            <li key={i}>{skill}</li>
-                        )} */}
-                        {/* {pageInfo.technologies.map(point => (
-                            <li key={point._id}>{point}</li>
-                        ))} */}
-                        {/* {skills.map((skill)=> (
-                            <li key={skill._id} className='flex items-center gap-2'><span><AiFillThunderbolt/></span>{skill._title}</li>
-                        ))} */}
-                        {/* {pageInfo.technologies.map((technology)=> (
-                            <Image
-                            key={technology._id}
-                            className='h-16 w-20'
-                            src={urlForImage(technology.image).url()}
-                            alt=''
-                            width={200}
-                            height={200}
-                            />
-                            
-                        ))} */}
-
+                    <ul className='max-w-[450px] text-sm grid grid-cols-2 gap-2 mt-2 place-items-center md:place-items-start'>
                         {pageInfo.technologies.map((technology)=> (
                             <li key={technology._id} className='flex items-center gap-2'>
                                 <AiFillThunderbolt/>{technology.title}
                             </li>
                         ))}
-                        {/* {skills.map((skill)=> (
-                            <Skill key={skill._id} skill={skill}/>
-                        ))} */}
-
-                        {/* <li className='flex items-center gap-2'><span><AiFillThunderbolt/></span>JavaScript</li>
-                        <li className='flex items-center gap-2'><span><AiFillThunderbolt/></span>React</li>
-                        <li className='flex items-center gap-2'><span><AiFillThunderbolt/></span>TypeScript</li>
-                        <li className='flex items-center gap-2'><span><AiFillThunderbolt/></span>MongoDB</li>
-                        <li className='flex items-center gap-2'><span><AiFillThunderbolt/></span>Next.js</li>
-                        <li className='flex items-center gap-2'><span><AiFillThunderbolt/></span>Node.js</li>
-                        <li className='flex items-center gap-2'><span><AiFillThunderbolt/></span>Express.js</li>
-                        <li className='flex items-center gap-2'><span><AiFillThunderbolt/></span>Tailwindcss</li> */}
                     </ul>
                 </div>
 
@@ -84,23 +50,6 @@ export default function About({pageInfo}: Props) {
                 </div>
             </div>
 
-            {/* <motion.img
-            initial={{
-                x:200,
-                opacity:0
-            }}
-            transition={{
-                duration:1.2
-            }}
-            whileInView={{
-                x:0,
-                opacity:1
-            }}
-            viewport={{once:true}} 
-            alt='' 
-            src='/public/assets/images/markchavez_.jpeg'
-            className='-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]'
-            />         */}
         </div>
     </section>
   )
