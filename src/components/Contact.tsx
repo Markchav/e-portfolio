@@ -19,9 +19,10 @@ type Props = {
 
 
 export default function Contact({pageInfo}: Props) {
-  const { register, handleSubmit,formState:{errors} } = useForm<Inputs>();
+  const { register, handleSubmit,formState:{errors},reset } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
     window.location.href = `mailto:markchavez165@gmail.com?subject=${formData.subject}&body=Hi, my name is ${formData.fullName}. ${formData.message}`
+    reset();
   };
 
   return (
