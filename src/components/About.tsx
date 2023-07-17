@@ -20,9 +20,9 @@ export default function About({pageInfo}: Props) {
 
             <SectionTitle title='about'/>
 
-            <div className='flex flex-col lgl:flex-row gap-16 mt-[700px] xs:mt-[550px] sm:mt-[460px]  lg:-mt-0'>
+            <div className='flex flex-col lgl:flex-row gap-16 mt-[700px] xs:mt-[550px] sm:mt-[460px] lg:-mt-0'>
 
-                <div className='w-full lgl:w-2/3 text-white font-medium flex flex-col gap-3 '>
+                <div className='w-full lgl:w-2/3 text-white font-medium flex flex-col gap-3 mt-20 sm:mt-0'>
                     
                     {/* <h4 className='text-2xl'>Here is a little background</h4> */}
                     <p className='md:text-lg text-base'>{pageInfo?.backgroundInformationFirstParagraph}</p>
