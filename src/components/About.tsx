@@ -25,10 +25,10 @@ export default function About({pageInfo}: Props) {
                 <div className='w-full lgl:w-2/3 text-white font-medium flex flex-col gap-3 mt-20 sm:mt-0'>
                     
                     {/* <h4 className='text-2xl'>Here is a little background</h4> */}
-                    <p className='md:text-lg text-base'>{pageInfo?.backgroundInformationFirstParagraph}</p>
-                    <p className='md:text-lg text-base'> {pageInfo?.backgroundInformationSecondParagraph} </p>
-                    <p className='md:text-lg text-base'>{pageInfo?.backgroundInformationThirdParagraph}</p>
-                    <p className='md:text-lg text-base'>Here are a few technologies I have been working with recently:</p>
+                    <p className='md:text-lg text-[15px]'>{pageInfo?.backgroundInformationFirstParagraph}</p>
+                    <p className='md:text-lg text-[15px]'> {pageInfo?.backgroundInformationSecondParagraph} </p>
+                    <p className='md:text-lg text-[15px]'>{pageInfo?.backgroundInformationThirdParagraph}</p>
+                    <p className='md:text-lg text-[15px]'>Here are a few technologies I have been working with recently:</p>
 
                     <ul className='max-w-[450px] text-sm grid grid-cols-2 gap-2 mt-2 place-items-center md:place-items-start'>
                         {pageInfo.technologies.map((technology)=> (
