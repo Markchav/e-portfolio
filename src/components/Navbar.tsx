@@ -37,7 +37,7 @@ export default function Navbar({pageInfo,socials}: Props) {
   }
   
   return (
-    <div className='w-full shadow-navbarShadow h-20 lg:h-[7vh] sticky top-0 z-50 px-4'>
+    <div className='w-full shadow-navbarShadow h-20 lg:h-[7vh] fixed top-0 z-50 px-4'>
         <div className='max-w-container h-full mx-auto py-1 flex items-center justify-between'>
 
           <motion.div 
