@@ -20,7 +20,7 @@ export default function About({pageInfo}: Props) {
 
             <SectionTitle title='about'/>
 
-            <div className='flex flex-col lgl:flex-row gap-16 xs:mt-[450px] lg:-mt-0'>
+            <div className='flex flex-col lgl:flex-row gap-16 mt-[600px] xs:mt-[550px] sm:mt-[460px]  lg:-mt-0'>
 
                 <div className='w-full lgl:w-2/3 text-white font-medium flex flex-col gap-3 '>
                     

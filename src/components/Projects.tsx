@@ -23,7 +23,7 @@ return (
 
             <SectionTitle title='Projects'/>
 
-            <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 md:mb-5 md:mt-0 mt-10 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
+            <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 md:mb-5 md:mt-0 mt-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
             {/* mb-28 sm:mb-14 */}
                 {projects?.map((project,i)=> (
                     <div key={i} className='w-screen flex-shrink-0 h-screen snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44'>

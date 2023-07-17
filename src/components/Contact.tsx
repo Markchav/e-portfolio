@@ -21,14 +21,14 @@ type Props = {
 export default function Contact({pageInfo}: Props) {
   const { register, handleSubmit,formState:{errors} } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
-    window.location.href = `mailto:markchavez165@gmail?subject=${formData.subject}&body=Hi, my name is ${formData.fullName}. ${formData.message}`
+    window.location.href = `mailto:markchavez165@gmail.com?subject=${formData.subject}&body=Hi, my name is ${formData.fullName}. ${formData.message}`
   };
 
   return (
     <section id='contact' className='snap-start'>
         <div className='h-screen relative flex flex-col text-center items-center md:text-left max-w-7xl  mx-auto md:flex-row justify-evenly'>
     <SectionTitle title='Contact'/>
-<div className='flex flex-col space-y-10 md:mt-32'>
+<div className='flex flex-col space-y-10 md:mt-32 xs:mt-20 '>
   <h4 className='text-2xl md:text-4xl font-semibold text-center'>
     {/* Don't be shy! Hit me up!👇🏻 */}
     {pageInfo?.intriguingContactBodyHeader}
