@@ -22,7 +22,7 @@ export default function About({pageInfo}: Props) {
 
             <div className='flex flex-col lgl:flex-row gap-16 mt-[720px] xs:mt-[500px] sm:mt-[460px] lg:-mt-0'>
 
-                <div className='w-full lgl:w-2/3 text-white font-medium flex flex-col gap-3 mt-16 smx:-mt-20 sm:mt-0'>
+                <div className='w-full lgl:w-2/3 text-white font-medium flex flex-col gap-3 mt-16 smx:-mt-20 md:mt-0'>
                     
                     {/* <h4 className='text-2xl'>Here is a little background</h4> */}
                     <p className='md:text-lg text-[15px] mt-10 sml:mt-0'>{pageInfo?.backgroundInformationFirstParagraph}</p>

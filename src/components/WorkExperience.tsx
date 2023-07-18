@@ -25,7 +25,7 @@ export default function WorkExperience({experiences}: Props) {
 
             <div className='max-w-containerxs mx-auto py-10 lgl:py-24 px-4 mt-20 lg:mt-5'>
 
-                <div className='w-full mt-10 flex flex-col md:flex-row text-gray-400 font-medium md:gap-16 gap-10 smx:-mt-10'>
+                <div className='w-full mt-10 flex flex-col md:flex-row text-gray-400 font-medium md:gap-16 gap-10 smx:-mt-10 md:mt-0'>
                     
                     <ul className=' md:w-32 flex flex-col '>
                         {experiences?.map((experience,idx)=> (
