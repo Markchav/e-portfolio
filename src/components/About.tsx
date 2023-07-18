@@ -25,7 +25,7 @@ export default function About({pageInfo}: Props) {
                 <div className='w-full lgl:w-2/3 text-white font-medium flex flex-col gap-3 mt-16 sm:mt-0'>
                     
                     {/* <h4 className='text-2xl'>Here is a little background</h4> */}
-                    <p className='md:text-lg text-[15px] mt-10 sm:mt-0'>{pageInfo?.backgroundInformationFirstParagraph}</p>
+                    <p className='md:text-lg text-[15px] mt-10 sml:mt-0'>{pageInfo?.backgroundInformationFirstParagraph}</p>
                     <p className='md:text-lg text-[15px]'> {pageInfo?.backgroundInformationSecondParagraph} </p>
                     <p className='md:text-lg text-[15px]'>{pageInfo?.backgroundInformationThirdParagraph}</p>
                     <p className='md:text-lg text-[15px]'>Here are a few technologies I have been working with recently:</p>
