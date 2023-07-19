@@ -101,7 +101,7 @@ export default function Navbar({pageInfo,socials}: Props) {
                 </Link>
             </ul>
 
-              <a href="/assets/Resume_SWE.pdf" target='_blank'>
+              <a href="/assets/Resume_exp.pdf" target='_blank'>
               <motion.button
             initial={{opacity:0}}
             animate={{opacity:1}}
@@ -183,7 +183,7 @@ export default function Navbar({pageInfo,socials}: Props) {
                 </Link>
             </ul>
 
-            <a href="/assets/Resume_SWE.pdf" target='_blank'>
+            <a href="/assets/Resume_exp.pdf" target='_blank'>
               <motion.button
             initial={{opacity:0}}
             animate={{opacity:1}}
