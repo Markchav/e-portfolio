@@ -14,7 +14,7 @@ type Props = {
 export default function Projects({ projects }: Props) {
   return (
     <section id="projects" className="text-white ">
-      <h3 className="uppercase tracking-[20px] text-gray-400 text-3xl md:text-4xl max-w-[320px] mx-auto pt-[25vw] md:pt-[5vw] text-center ml-[30px] md:ml-0">
+      <h3 className="uppercase tracking-[20px] text-gray-400 text-3xl md:text-4xl max-w-[320px] mx-auto pt-[25vw] md:pt-[5vw] text-center ml-[30px] md:ml-auto">
         Projects
       </h3>
 
