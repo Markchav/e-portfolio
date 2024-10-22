@@ -73,7 +73,7 @@ export default function Projects({ projects }: Props) {
               <Image
                 alt=""
                 src={urlForImage(project?.image).url()}
-                className=" h-auto md:h-[350px] w-[600px] object-cover border rounded-gray-700"
+                className=" h-auto md:h-[350px] w-[600px] object-cover rounded-gray-700"
                 width={500}
                 height={700}
               />
