@@ -51,32 +51,53 @@ export default function Projects({ projects }: Props) {
                 ))}
               </ul>
 
-              <div className=" w-full md:w-64 h-[1px] bg-gray-400 my-4 tracking-wide flex gap-5 md:gap-5 text-white justify-center md:justify-start">
-                <a
-                  className="hover:text-gray-400 duration-300 my-2"
-                  href={project?.linkToGithub}
-                  target="_blank"
-                >
-                  <TbBrandGithub className="md:h-8 md:w-8 h-8 w-8" />
-                </a>
-                <a
-                  className="hover:text-gray-400 duration-300 my-2"
-                  href={project?.linkToBuild}
-                  target="_blank"
-                >
-                  <RxOpenInNewWindow className="md:h-8 md:w-8 h-8 w-8" />
-                </a>
+              <div className="w-full md:w-64 h-[1px] bg-gray-400 my-4 tracking-wide flex gap-5 md:gap-5 text-white justify-center md:justify-start">
+                {project?.linkToGithub ? (
+                  <>
+                    <a
+                      className="hover:text-gray-400 duration-300 my-2"
+                      href={project.linkToGithub}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <TbBrandGithub className="md:h-8 md:w-8 h-8 w-8" />
+                    </a>
+                    <a
+                      className="hover:text-gray-400 duration-300 my-2"
+                      href={project.linkToBuild}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <RxOpenInNewWindow className="md:h-8 md:w-8 h-8 w-8" />
+                    </a>
+                  </>
+                ) : (
+                  <a
+                    className="hover:text-gray-400 duration-300 my-2"
+                    href={project?.linkToBuild}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <RxOpenInNewWindow className="md:h-8 md:w-8 h-8 w-8" />
+                  </a>
+                )}
               </div>
             </div>
 
             <div className="flex justify-center items-center">
-              <Image
-                alt=""
-                src={urlForImage(project?.image).url()}
-                className=" h-auto md:h-[350px] w-[600px] object-cover rounded-gray-700"
-                width={500}
-                height={700}
-              />
+              <a
+                href={project?.linkToBuild}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  alt=""
+                  src={urlForImage(project?.image).url()}
+                  className="h-auto md:h-[350px] w-[600px] object-cover rounded-gray-700 rounded-xl transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg"
+                  width={500}
+                  height={700}
+                />
+              </a>
             </div>
           </motion.div>
         ))}
