@@ -18,10 +18,10 @@ export default function WorkExperience({ experiences }: Props) {
 
   return (
     <section id="experience" className="snap-center">
-      <div className="flex relative h-full md:h-screen max-w-7xl justify-evenly items-center lg:mt-0 overflow-hidden">
+      <div className="flex relative h-full md:h-screen max-w-7xl justify-evenly items-center lg:mt-0  overflow-hidden">
         <SectionTitle title="experience" />
 
-        <div className="max-w-containerxs mx-auto py-10 lgl:py-24 px-4 mt-20 lg:mt-5">
+        <div className="max-w-containerxs mx-auto py-10 lgl:py-24 px-4 sm:mt-20 smx:mt-40 lg:mt-5">
           <div className="w-full mt-10 flex flex-col md:flex-row text-gray-400 font-medium md:gap-16 gap-10 smx:-mt-10 md:mt-0">
             <ul className=" md:w-32 flex flex-col ">
               {experiences?.map((experience, idx) => (

@@ -16,10 +16,10 @@ export default function About({ pageInfo }: Props) {
   return (
     // max-w-containerSmall mx-auto py-10 lgl:py-32 flex flex-col gap-8
     <section id="about" className="snap-center">
-      <div className="flex flex-col relative h-full md:h-screen text-center md:text-left md:flex-row max-w-7xl justify-evenly mx-auto items-center max-w-contentContainer pt-40 pb-10 lgl:py-32 gap-8">
+      <div className="flex flex-col relative h-full md:h-screen text-center md:text-left md:flex-row max-w-7xl justify-evenly mx-auto items-center max-w-contentContainer pt-40 lgl:py-32 gap-8">
         <SectionTitle title="about" />
 
-        <div className="flex flex-col lgl:flex-row gap-16 mt-[720px] xs:mt-[500px] sm:mt-[0px] lg:-mt-0">
+        <div className="flex flex-col lgl:flex-row gap-16 mt-[720px] xs:mt-[500px] sm:mt-[0px] smx:mt-[50px] lg:-mt-0">
           <div className="w-full lgl:w-2/3 text-white font-medium flex flex-col gap-3 smx:-mt-20 md:mt-0">
             {/* <h4 className='text-2xl'>Here is a little background</h4> */}
             <p className="md:text-lg text-[15px] mt-10 sml:mt-0">
