@@ -18,7 +18,7 @@ export default function WorkExperience({ experiences }: Props) {
 
   return (
     <section id="experience" className="snap-center">
-      <div className="flex relative h-screen max-w-7xl justify-evenly items-center lg:mt-0 mt-96 overflow-hidden">
+      <div className="flex relative h-full md:h-screen max-w-7xl justify-evenly items-center lg:mt-0 overflow-hidden">
         <SectionTitle title="experience" />
 
         <div className="max-w-containerxs mx-auto py-10 lgl:py-24 px-4 mt-20 lg:mt-5">
