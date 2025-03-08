@@ -114,7 +114,7 @@ export default function Navbar({ pageInfo, socials }: Props) {
             </Link>
           </ul>
 
-          <a href="/assets/Mark_Chavez_Resume.pdf" target="_blank">
+          <a href="/assets/Mark-Chavez-Resume.pdf" target="_blank">
             <motion.button
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -222,7 +222,7 @@ export default function Navbar({ pageInfo, socials }: Props) {
                   </Link>
                 </ul>
 
-                <a href="/assets/Mark_Chavez_Resume.pdf" target="_blank">
+                <a href="/assets/Mark-Chavez-Resume.pdf" target="_blank">
                   <motion.button
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
